@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#14532d"/>
+  <!-- gold star -->
+  <polygon points="512,118 550,234 672,234 573,305 610,420 512,348 414,420 451,305 352,234 474,234" fill="#d4af37"/>
+  <!-- open book -->
+  <path d="M512 470 C 420 412 298 396 192 414 L192 812 C 298 794 420 810 512 868 C 604 810 726 794 832 812 L832 414 C 726 396 604 412 512 470 Z" fill="#f7ead1"/>
+  <line x1="512" y1="470" x2="512" y2="868" stroke="#14532d" stroke-width="14"/>
+  <line x1="248" y1="520" x2="452" y2="500" stroke="#b8912f" stroke-width="16" stroke-linecap="round"/>
+  <line x1="248" y1="610" x2="452" y2="590" stroke="#b8912f" stroke-width="16" stroke-linecap="round"/>
+  <line x1="248" y1="700" x2="452" y2="684" stroke="#b8912f" stroke-width="16" stroke-linecap="round"/>
+  <line x1="572" y1="500" x2="776" y2="520" stroke="#b8912f" stroke-width="16" stroke-linecap="round"/>
+  <line x1="572" y1="590" x2="776" y2="610" stroke="#b8912f" stroke-width="16" stroke-linecap="round"/>
+  <line x1="572" y1="684" x2="776" y2="700" stroke="#b8912f" stroke-width="16" stroke-linecap="round"/>
+</svg>
