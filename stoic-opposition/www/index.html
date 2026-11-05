@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>The Stoic Opposition</title>
+<style>
+:root{--navy:#212d3b;--navy2:#2c3e50;--red:#c52926;--paper:#faf6ec;--ink:#1d2733;--gold:#b98a2f;--mut:#68707a;--card:#fff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--paper);color:var(--ink);padding-bottom:80px}
+header{background:var(--navy);color:#fff;padding:14px 16px 12px;position:sticky;top:0;z-index:5;border-bottom:4px solid var(--red)}
+header h1{margin:0;font-size:19px;font-family:Impact,"Arial Black",sans-serif;letter-spacing:1.5px;font-weight:400}
+header p{margin:2px 0 0;font-size:12.5px;color:#c8d2dc}
+main{padding:12px;max-width:680px;margin:0 auto}
+.card{background:var(--card);border:1px solid #e2d9c4;border-radius:12px;padding:13px;margin-bottom:11px}
+.card h2{margin:0 0 7px;font-size:16.5px;color:var(--navy);font-family:Impact,"Arial Black",sans-serif;letter-spacing:.8px;font-weight:400}
+.card h3{margin:12px 0 5px;font-size:14.5px;color:var(--navy)}
+p.tx{font-size:14.5px;line-height:1.5;margin:0 0 9px}
+.receipt{border:2px solid var(--navy);border-radius:10px;padding:12px;background:#fdfaf1}
+.receipt .rh{font-family:Impact,"Arial Black",sans-serif;letter-spacing:1px;color:var(--navy);border-bottom:1px dashed #9aa4ae;padding-bottom:6px;margin-bottom:8px}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.pillar{border:1px solid #e2d9c4;border-radius:10px;padding:10px;background:#fff}
+.pillar b{color:var(--navy);display:block;margin-bottom:3px}
+.pillar span{font-size:13px;color:#444}
+.stamps{display:flex;flex-wrap:wrap;gap:6px}
+.stamp{border:2px solid var(--red);color:var(--red);border-radius:6px;padding:4px 9px;font-weight:700;font-size:12.5px;transform:rotate(-1deg)}
+input[type=text],input[type=number],textarea,select{width:100%;padding:10px;border:1px solid #c6bda6;border-radius:9px;font-size:15px;background:#fff}
+textarea{min-height:60px}
+.btn{display:inline-block;border:1px solid var(--navy);background:#fff;color:var(--navy);border-radius:9px;padding:9px 13px;font-size:14px;font-weight:600;cursor:pointer;margin:4px 4px 4px 0}
+.btn.primary{background:var(--navy);color:#fff}
+.btn.red{border-color:var(--red);color:var(--red)}
+.btn.small{padding:5px 9px;font-size:12.5px}
+label.f{display:block;font-size:12.5px;color:var(--mut);margin:8px 0 3px}
+.cols{display:grid;grid-template-columns:1fr;gap:10px}
+.colhd{font-family:Impact,"Arial Black",sans-serif;letter-spacing:.7px;font-size:13.5px;color:#fff;background:var(--navy2);border-radius:8px;padding:6px 10px;margin-bottom:7px}
+.entry{border:1px solid #e2d9c4;border-radius:10px;padding:10px;margin-bottom:8px;background:#fff}
+.entry b{color:var(--navy)}
+.entry p{font-size:13.5px;margin:4px 0}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:99px;padding:1px 8px;background:#eee3c2;color:#6b5510;margin-left:6px}
+.tag.adopted{background:#d7ecd7;color:#1e7d32}
+.tag.unres{background:#f6d5d3;color:#a33}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--navy);display:flex;flex-wrap:wrap;z-index:9;padding-bottom:env(safe-area-inset-bottom)}
+nav.tabs button{flex:1 0 25%;background:none;border:none;color:#aebccb;font-size:11px;padding:9px 2px 11px;cursor:pointer}
+nav.tabs button.on{color:#fff;border-top:3px solid var(--red)}
+nav.tabs .ic{display:block;font-size:16px}
+.hidden{display:none!important}
+.small{font-size:12.5px;color:var(--mut)}
+a{color:#1756a9}
+.verdict{font-size:16px;font-weight:700;color:var(--navy);background:#fdf6e0;border-left:4px solid var(--gold);padding:10px;border-radius:8px}
+input[type=range]{width:100%}
+.scale{display:flex;justify-content:space-between;font-size:11.5px;color:var(--mut)}
+.fal{padding:8px 0;border-bottom:1px solid #eee3c8}
+.fal:last-child{border-bottom:none}
+.fal b{color:var(--navy)}
+.fal p{margin:2px 0 0;font-size:13.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>THE STOIC OPPOSITION</h1>
+  <p>Doing the opposite of politics · no consultants · no tribal team sports · applied civic reclamation</p>
+</header>
+<main>
+  <!-- HOME -->
+  <section id="scr-home">
+    <div class="card">
+      <h2>THE COMMITTEE ROOM IS EMPTY. GOOD.</h2>
+      <p class="tx">Doing politics is the problem. Political parties are not identities. They are infrastructure: ballot lines, bylaws, bank accounts, endorsements — and rooms where a handful of people make binding decisions about all of it. In a lot of counties those rooms are understaffed. Some are effectively vacant. Nobody is guarding the door, because nobody thinks the room matters.</p>
+      <p class="tx"><b>The room is the whole game.</b> Find yours. Take a seat. Change the rule. Show the receipt.</p>
+      <div class="stamps"><span class="stamp">1 · AUDIT</span><span class="stamp">2 · QUORUM</span><span class="stamp">3 · MECHANISM</span><span class="stamp">4 · LEDGER</span></div>
+      <p class="tx" style="margin-top:10px">The horizon: <b>both candidates unbought.</b> Imagine a general election where neither candidate took corporate PAC or lobbyist money. That future is built county by county, committee by committee, rule by rule — by people willing to sit in folding chairs on a Tuesday night. There is no donate button. The ask is your Tuesday night, not your wallet.</p>
+    </div>
+    <div class="card receipt">
+      <div class="rh">RECEIPT — EXHIBIT A · LONOKE COUNTY, ARKANSAS</div>
+      <p class="tx">Four people · Quorum achieved · <b>§601.4 adopted Jan 23, 2026</b></p>
+      <p class="tx" style="margin:0">RESULT: A BINDING CLEAN-MONEY RULE. Not a pledge. Not a press release. A bylaw, adopted by a county party committee, that binds the committee, its auxiliaries, and its own candidates. See it in the Living Ledger.</p>
+    </div>
+    <div class="card">
+      <h2>THE FOUR PILLARS</h2>
+      <div class="pillars">
+        <div class="pillar"><b>Dynamic Applied Synthesism</b><span>Treat governance as an operational science: throw out the dead ideological maps and engineer systems that actually work.</span></div>
+        <div class="pillar"><b>The Anti-Politician Scorecard</b><span>Stop grading leaders left vs. right. Grade them Sophistry vs. Stewardship: clean-government rules passed, or cameras performed for?</span></div>
+        <div class="pillar"><b>The Plebeian Reclamation</b><span>Move serious people into the vacant and poorly defended committee seats and take the machinery back.</span></div>
+        <div class="pillar"><b>The Policy Laboratory</b><span>An open-source library of model bills, ordinances, and bylaws — ready to copy, adapt, and introduce at a local meeting. Words shown before power is asked for.</span></div>
+      </div>
+      <p class="small" style="margin-top:10px">More: <a href="https://thestoicopposition.com" target="_blank" rel="noopener">thestoicopposition.com</a> · <a href="https://open.substack.com/pub/thestoicopposition" target="_blank" rel="noopener">Substack</a> · <a href="https://www.youtube.com/@StoicOpposition" target="_blank" rel="noopener">Premise Check on YouTube</a></p>
+    </div>
+  </section>
+
+  <!-- PLAYBOOK -->
+  <section id="scr-play" class="hidden">
+    <div class="card">
+      <h2>THE PLEBEIAN RECLAMATION</h2>
+      <p class="tx">A dual-track, hostile-but-lawful takeover of local party committees from within — by the people the parties were built to represent.</p>
+      <h3>The philosophy: Dynamic Synthesism</h3>
+      <p class="tx"><b>Efficacy over aesthetic.</b> A policy is judged by whether it works, not by which tribe it flatters. Ideas from anywhere are tested, combined, and either kept, improved, or retired — with the verdict recorded in the Living Ledger. Leaders are graded on one axis: <b>Sophistry vs. Stewardship</b> — performing, or passing clean-government rules and doing the work? Parties are infrastructure, never identity. You do not identify with the water department. You show up to the meeting where its rates are set.</p>
+      <h3>Phase 1 — Geographic Audits</h3>
+      <p class="tx">Map the terrain county by county: committee rosters, seat counts, vacancy rates, meeting schedules, and the bylaws that govern each room. The audit turns a vague complaint (“politics is broken”) into a number (“this committee has 40 seats, 17 filled, and a quorum of 9”).</p>
+      <h3>Phase 2 — Quorum &amp; Seat Acquisition</h3>
+      <p class="tx">Small cadres — three to five serious people — claim vacant precinct and committee seats by filing the form and attending the meetings. In a half-empty committee, a handful of reliable attendees is not a faction. It is a quorum problem for the existing machine, and a governing majority in waiting.</p>
+      <h3>Phase 3 — The Clean-Money Floor Vote</h3>
+      <p class="tx">Once seated, move the mechanism: a binding bylaw that cuts the committee, its auxiliaries, and its candidates off from money the committee itself designates as misaligned with its platform. Not a resolution. Not a pledge. A rule, adopted on the floor, with a public list, refunds, and an investigation process. Lonoke County did this on January 23, 2026.</p>
+      <p class="tx small">An honest note on tracks: the mechanics work inside either party, in any county, because they operate on procedure rather than ideology. Corey Spangler's current operational home is the Democratic Party in Lonoke County, Arkansas, where he serves as county chair. That is disclosed, not hidden.</p>
+    </div>
+    <div class="card">
+      <h2>STEAL THIS RULE — THE MECHANISM</h2>
+      <p class="tx"><span class="tag">LABELED SUMMARY</span></p>
+      <p class="tx">What follows is a <b>faithful summary of the adopted §601.4 designation mechanism — not the adopted text</b>. This app does not reproduce the bylaw verbatim; the label is the product.</p>
+      <p class="tx"><b>Designation, not categories.</b> The County Committee designates specific entities — any organization, corporation, or private individual — as “grossly misaligned in their mission, message, or operations” with the party platform.</p>
+      <p class="tx"><b>The ban binds everyone the committee controls.</b> The committee itself, its auxiliaries, and its own candidates and nominees may not accept funds from a designated entity.</p>
+      <p class="tx"><b>The list is public and maintained.</b> The Secretary keeps the proscribed list, publicly available and distributed to candidates. Additions and removals are proposed from the floor and voted at the following meeting by simple majority.</p>
+      <p class="tx"><b>Mistakes get unwound.</b> A contribution from a designated entity is refunded within 30 days. The Rules Committee investigates suspected violations and recommends remediation.</p>
+      <p class="tx">Why this design? A fixed list of banned categories goes stale or gets lawyered around. A designation model lets the membership itself decide, in public, whose money is incompatible with its stated platform — and makes that decision revisable by the same body that made it.</p>
+    </div>
+    <div class="card">
+      <h2>RUN YOUR OWN COUNTY AUDIT</h2>
+      <p class="tx"><b>1. Find your committee.</b> Every county has (or is supposed to have) a county party committee for each party. Find when and where yours meets, and who the chair and secretary are. If nobody can tell you, that is your first finding.</p>
+      <p class="tx"><b>2. Get the roster and the bylaws.</b> The roster tells you how many seats exist and how many are filled. The bylaws tell you how seats are claimed, what quorum is, and how rules get changed. Ask politely. Ask in writing if you have to.</p>
+      <p class="tx"><b>3. Count the chairs.</b> Total seats, filled seats, vacant seats. Then do the quorum math in Take a Seat.</p>
+      <p class="tx"><b>4. Attend once as an observer.</b> Show up, sit down, take notes. Learn the procedure before you try to use it.</p>
+      <p class="tx" style="margin:0"><b>5. Claim a seat — and bring a quorum.</b> File whatever the bylaws and state law require to fill a vacant seat for your precinct. Recruit to the number the math gave you, and put the clean-money rule on the agenda under New Business.</p>
+    </div>
+  </section>
+
+  <!-- LEDGER -->
+  <section id="scr-ledger" class="hidden">
+    <div class="card">
+      <h2>THE LIVING LEDGER</h2>
+      <p class="tx">Claims, with receipts. Every mechanism carries a status and its evidence — including the ones still in process and the ones whose record is honestly unresolved. A thing is IN FORCE only when the record says it was adopted. If an entry is wrong, the correction goes in the entry — not in a quiet edit.</p>
+      <div class="cols" id="ledger-cols"></div>
+      <h3>Add an entry</h3>
+      <input type="text" id="l-title" placeholder="Mechanism name">
+      <label class="f">Status</label>
+      <select id="l-status"><option value="works">In the works</option><option value="force">In force</option><option value="retired">Retired</option></select>
+      <label class="f">Detail / evidence</label>
+      <textarea id="l-detail" placeholder="What it is, where, when — with the source."></textarea>
+      <button class="btn primary" id="btn-led">Add to Ledger</button>
+    </div>
+  </section>
+
+  <!-- TAKE A SEAT -->
+  <section id="scr-seat" class="hidden">
+    <div class="card">
+      <h2>QUORUM CALCULATOR</h2>
+      <p class="tx">Quorum is the minimum number of members who must be present for a committee to legally do business. It is set by the bylaws, and it is usually much smaller than people assume. Run your county's real numbers:</p>
+      <label class="f">Committee size (total seats)</label>
+      <input type="number" id="c-seats" min="0" placeholder="e.g. 40">
+      <label class="f">Seats currently vacant (used by the “majority of members” rule)</label>
+      <input type="number" id="c-vacant" min="0" placeholder="e.g. 18">
+      <label class="f">Quorum rule in the bylaws</label>
+      <select id="c-rule"><option value="seats">Majority of seats</option><option value="members">Majority of members (filled seats)</option><option value="third">One-third of seats</option></select>
+      <label class="f">Seats your group holds</label>
+      <input type="number" id="c-yours" min="0" placeholder="e.g. 25">
+      <div style="margin-top:10px"><button class="btn primary" id="btn-calc">Do the math</button></div>
+      <div id="calc-out" style="margin-top:10px"></div>
+      <p class="small">Check your bylaws — some committees set their own number or percentage. Use the closest rule and verify by hand.</p>
+    </div>
+    <div class="card">
+      <h2>COMMITTEE TRACKER</h2>
+      <div id="comm-list"></div>
+      <h3>Add a committee</h3>
+      <input type="text" id="k-name" placeholder="Committee name">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <div><label class="f">Seats</label><input type="number" id="k-seats" min="0"></div>
+        <div><label class="f">Vacant</label><input type="number" id="k-vacant" min="0"></div>
+        <div><label class="f">Your people</label><input type="number" id="k-yours" min="0"></div>
+      </div>
+      <label class="f">Quorum rule</label>
+      <select id="k-rule"><option value="seats">Majority of seats</option><option value="members">Majority of members (filled seats)</option><option value="third">One-third of seats</option></select>
+      <label class="f">Note</label>
+      <input type="text" id="k-note" placeholder="Meeting night, chair, findings…">
+      <div style="margin-top:8px"><button class="btn primary" id="btn-comm">Add committee</button></div>
+    </div>
+  </section>
+
+  <!-- SCORECARD + PIPELINE -->
+  <section id="scr-tools" class="hidden">
+    <div class="card">
+      <h2>ANTI-POLITICIAN SCORECARD</h2>
+      <p class="tx">Grade any leader on the only axis that matters: <b>Sophistry (0) → Stewardship (100)</b>. Performing for the cameras, or passing clean-government rules and doing the work? Attach the evidence.</p>
+      <div id="score-list"></div>
+      <h3>Grade someone</h3>
+      <input type="text" id="p-name" placeholder="Name">
+      <label class="f">Score: <b id="p-val">50</b></label>
+      <input type="range" id="p-score" min="0" max="100" value="50">
+      <div class="scale"><span>0 · SOPHISTRY</span><span>STEWARDSHIP · 100</span></div>
+      <label class="f">Evidence note</label>
+      <textarea id="p-note" placeholder="The rule they passed, the vote they took, the receipt."></textarea>
+      <button class="btn primary" id="btn-score">Add to Scorecard</button>
+    </div>
+    <div class="card">
+      <h2>CONTENT PIPELINE</h2>
+      <p class="tx">Substack and Premise Check ideas, moved from Idea to Published. Nothing here posts anything — it tracks the work.</p>
+      <div id="pipe-list"></div>
+      <h3>New item</h3>
+      <input type="text" id="i-title" placeholder="Working title">
+      <label class="f">Channel</label>
+      <select id="i-kind"><option>Substack</option><option>Premise Check</option></select>
+      <div style="margin-top:8px"><button class="btn primary" id="btn-pipe">Add idea</button></div>
+    </div>
+  </section>
+
+  <!-- PREMISE CHECK -->
+  <section id="scr-pc" class="hidden">
+    <div class="card">
+      <h2>PREMISE CHECK — THE RHETORICAL LOGIC AUDIT</h2>
+      <p class="tx"><i>We autopsy the argument, not the person.</i> One political line at a time, slowed down and rebuilt where everyone can see the moving parts.</p>
+      <h3>The method</h3>
+      <p class="tx"><b>Reconstruct</b> the argument as premises and a conclusion, in the strongest form the speaker's words support. <b>Expose the hidden premise.</b> <b>Name the fallacy</b> — if there is one; if the honest reconstruction is not fallacious, we pick a different clip. <b>Steelman</b> the other side before grading anything. <b>Verdict</b> on Sophistry vs. Stewardship. The same test applies to everyone. Naming a fallacy does not prove a conclusion false — it proves that argument did not prove it.</p>
+      <h3>House rules</h3>
+      <p class="tx">Reconstruct with the speaker's evident meaning — never literalize a figurative line. Steelman first, at full strength; then the verdict doesn't pull punches: name absurdity and internal contradiction plainly, and hunt position bundles that undercut their own stated goal. Quotes are verified against a reliable source before anything airs; unverifiable quotes are marked paraphrase, never put in quotation marks. AI narration is disclosed on every episode.</p>
+      <h3>Three formats — don't bolt them together</h3>
+      <p class="tx"><b>1 · Logic Audit</b> — the full autopsy: premises, validity, hidden premise, fallacy, steelman, verdict.<br><b>2 · Lie Exposure</b> — no logic breakdown: the claim, the verified facts that refute it with sources, and what the lie was doing.<br><b>3 · Fallacy Spotlight</b> — one named fallacy, taught plainly: definition, skeleton, and a verified modern example.</p>
+      <h3>Episodes</h3>
+      <p class="tx"><b>Ep. 001 · Logic Audit</b> — “With us or with the terrorists” (Bush, Sept 20, 2001). The form is valid; the first premise is false. A false dilemma. <a href="https://www.youtube.com/shorts/f9iwwm8dQJg" target="_blank" rel="noopener">Watch →</a><br><b>Explainer</b> — What is a Rhetorical Logic Audit?<br><b>Ep. 004</b> — the abortion-bundle incoherence audit; the tone template for the channel.</p>
+      <h3>Corrections log</h3>
+      <p class="tx">Ep. 002 (Talarico) — published and pulled the same day, Nov 4, 2026. The audit read a figurative line literally and attacked a claim the speaker had not made. Rule adopted: reconstruct with the speaker's evident meaning; if the honest reading isn't fallacious, pick a different clip. The episode stays pulled. The rule stays posted.</p>
+    </div>
+    <div class="card">
+      <h2>THE FALLACY CATALOG — 32</h2>
+      <p class="tx">8 formal, 24 informal. The working reference for Fallacy Spotlights; each carries a sourced modern example in the production file. Guardrail: naming a fallacy does <b>not</b> prove the speaker's conclusion false (see I24).</p>
+      <input type="text" id="fal-q" placeholder="Search fallacies…">
+      <div id="fal-list" style="margin-top:6px"></div>
+    </div>
+  </section>
+</main>
+<nav class="tabs">
+  <button data-scr="scr-home" class="on"><span class="ic">🏛️</span>Home</button>
+  <button data-scr="scr-play"><span class="ic">📕</span>Playbook</button>
+  <button data-scr="scr-ledger"><span class="ic">📒</span>Ledger</button>
+  <button data-scr="scr-seat"><span class="ic">🪑</span>Take a Seat</button>
+  <button data-scr="scr-tools"><span class="ic">⚖️</span>Scorecard</button>
+  <button data-scr="scr-pc"><span class="ic">🔍</span>Premise Check</button>
+</nav>
+<script>
+"use strict";
+const FAL=[{"code": "F1", "name": "Affirming the Consequent (alias: converse error)", "type": "Formal", "def": "Treating a result as proof of one specific cause, when the same result could have many causes.", "form": "If A, then B. B. Therefore, A."}, {"code": "F2", "name": "Denying the Antecedent (alias: inverse error)", "type": "Formal", "def": "Assuming that removing a condition automatically removes its result, as if the condition were the only route to that result.", "form": "If A, then B. Not A. Therefore, not B."}, {"code": "F3", "name": "Affirming a Disjunct (alias: false exclusion)", "type": "Formal", "def": "Treating an \"or\" as exclusive when it isn't \u2014 concluding one option must be false just because the other is true.", "form": "A or B. A. Therefore, not B."}, {"code": "F4", "name": "Fallacy of the Undistributed Middle", "type": "Formal", "def": "Two things share a common trait, so the argument concludes they are the same thing \u2014 but the shared trait was never shown to belong to them alone.", "form": "All A are B. C is B. Therefore, C is A."}, {"code": "F5", "name": "Illicit Process (aliases: illicit major, illicit minor)", "type": "Formal", "def": "A term covers all of a category in the conclusion when the premises only ever covered some of it \u2014 the conclusion quietly widens the claim.", "form": "All A are B. No C are A. Therefore, no C are B. (Invalid: \"B\" is distributed in the conclusion but not in the premise.)"}, {"code": "F6", "name": "Fallacy of Four Terms (alias: quaternio terminorum)", "type": "Formal", "def": "A syllogism needs exactly three terms; this one smuggles in a fourth by using the same word in two different senses, so the premises never actually connect.", "form": "All A are B. C is A\u2032 (a different sense of \"A\"). Therefore, C is B."}, {"code": "F7", "name": "Masked Man Fallacy (alias: illicit substitution of identicals)", "type": "Formal", "def": "Swapping two names for the same person or thing inside a belief/intention context, where the swap changes the truth \u2014 knowing someone as one thing is not knowing them as another.", "form": "X knows/believes P about A. A = B. Therefore, X knows/believes P about B. (Invalid in intensional contexts.)"}, {"code": "F8", "name": "Existential Fallacy", "type": "Formal", "def": "Drawing a conclusion about actual, existing cases from premises that only state general rules \u2014 \"all\" and \"no\" statements alone can't prove that anything (or anyone) in the category exists or acted.", "form": "All A are B. All A are C. Therefore, some B are C. (Invalid without proof that A is non-empty.)"}, {"code": "I1", "name": "Ad Hominem (aliases: personal attack; abusive ad hominem)", "type": "Informal", "def": "Attacking the person making the argument instead of the argument itself.", "form": "X is (insult/trait). Therefore, X's position is wrong."}, {"code": "I2", "name": "Straw Man", "type": "Informal", "def": "Replacing an opponent's actual position with an exaggerated, weaker version, then defeating the substitute.", "form": "Opponent holds P. Speaker attacks P\u2032 (a distortion of P). Therefore, opponent is refuted."}, {"code": "I3", "name": "Red Herring (alias: ignoratio elenchi, irrelevant conclusion)", "type": "Informal", "def": "Dodging the question at hand by substituting a different, more comfortable topic.", "form": "Question Q is raised. Speaker answers unrelated Q\u2032 at length. The audience forgets Q."}, {"code": "I4", "name": "Tu Quoque (aliases: whataboutism; appeal to hypocrisy)", "type": "Informal", "def": "Answering a charge by charging the accuser with the same thing, as if that settled the original charge.", "form": "A accuses B of X. B replies: \"A does X too.\" Therefore, the charge against B fails."}, {"code": "I5", "name": "Poisoning the Well (alias: genetic fallacy, when it judges a claim by its source)", "type": "Informal", "def": "Discrediting a source in advance so that anything it says later is rejected without examination.", "form": "Source S is corrupt/biased/enemy. Therefore, whatever S reports is false."}, {"code": "I6", "name": "Guilt by Association", "type": "Informal", "def": "Condemning a person or idea because of who they are connected to, rather than anything they themselves said or did.", "form": "X is associated with Y. Y is bad. Therefore, X is bad."}, {"code": "I7", "name": "Appeal to Authority (alias: argumentum ad verecundiam)", "type": "Informal", "def": "Treating a claim as settled because an authority figure asserted it, without the underlying evidence \u2014 weakest when the \"authority\" is the speaker himself.", "form": "Authority A says P. Therefore, P."}, {"code": "I8", "name": "Appeal to Popularity (aliases: bandwagon; argumentum ad populum)", "type": "Informal", "def": "Treating how many people hold a view (or cast a vote) as proof that the view is right or that a further conclusion follows.", "form": "Many people believe/support P. Therefore, P (or Q about a person) is established."}, {"code": "I9", "name": "Appeal to Emotion \u2014 Fear (alias: argumentum ad metum; scare tactics)", "type": "Informal", "def": "Substituting a frightening outcome for evidence, so the audience reacts to the threat instead of weighing the claim.", "form": "If you don't do X, catastrophe Y will follow. (Y asserted, not demonstrated.) Therefore, do X."}, {"code": "I10", "name": "False Dilemma (aliases: false dichotomy; black-or-white fallacy; either/or fallacy)", "type": "Informal", "def": "Presenting two options as the only possibilities when more exist.", "form": "Either A or B. Not A. Therefore, B. (Invalid when C, D\u2026 were quietly deleted.)"}, {"code": "I11", "name": "Begging the Question (aliases: circular reasoning; petitio principii)", "type": "Informal", "def": "Assuming the very conclusion the argument is supposed to prove, so the \"proof\" travels in a circle.", "form": "P is true because P is true (with the premise restated in different words)."}, {"code": "I12", "name": "Appeal to Ignorance (alias: argumentum ad ignorantiam; burden-shifting)", "type": "Informal", "def": "Claiming something is true because it hasn't been proven false \u2014 or false because it hasn't been proven true \u2014 putting the burden of proof on the wrong side.", "form": "P has not been disproven. Therefore, P."}, {"code": "I13", "name": "Hasty Generalization (alias: faulty generalization; anecdote-to-law)", "type": "Informal", "def": "Drawing a sweeping conclusion about a whole group from a tiny, unrepresentative, or unverified sample.", "form": "One/few members of G did X. Therefore, G does X."}, {"code": "I14", "name": "False Cause (alias: post hoc ergo propter hoc; correlation as causation)", "type": "Informal", "def": "Concluding that one thing caused another merely because it happened before it, or alongside it.", "form": "A occurred, then B occurred. Therefore, A caused B."}, {"code": "I15", "name": "Slippery Slope", "type": "Informal", "def": "Asserting that one step will inevitably cascade into an extreme outcome, without evidence for the links in the chain.", "form": "If A, then B; if B, then C; \u2026 therefore A leads to disaster Z. (Each arrow asserted, none proven.)"}, {"code": "I16", "name": "Cherry Picking (alias: suppressed evidence; card stacking)", "type": "Informal", "def": "Selecting only the data points that support the conclusion and quietly omitting the ones that don't.", "form": "Evidence set E supports P. Speaker cites only the favorable slice of E. Therefore, P."}, {"code": "I17", "name": "Moving the Goalposts (alias: raising the bar)", "type": "Informal", "def": "After a claim is tested against the agreed standard, changing the standard instead of conceding the result.", "form": "Claim P tested by standard S and fails. Speaker substitutes standard S\u2032 under which P survives."}, {"code": "I18", "name": "Weak Analogy (alias: false analogy)", "type": "Informal", "def": "Arguing that because two things are alike in some respects, they must be alike in the respect that matters \u2014 when the differences are the important part.", "form": "X and Y share traits a, b. X has trait c. Therefore, Y has trait c."}, {"code": "I19", "name": "False Compromise (aliases: middle-ground fallacy; argument to moderation)", "type": "Informal", "def": "Assuming the truth must lie halfway between two positions just because there are two positions.", "form": "A says P; B says not-P. Therefore, the truth is halfway between P and not-P."}, {"code": "I20", "name": "Equivocation", "type": "Informal", "def": "Using the same word in two different senses within one argument, so the conclusion trades on the confusion.", "form": "Term T means T\u2081 in the premise and T\u2082 in the conclusion. Therefore\u2026 (the argument only works if T\u2081 = T\u2082)."}, {"code": "I21", "name": "Loaded Question (alias: complex question)", "type": "Informal", "def": "A question that smuggles in an unproven assumption, so any direct answer concedes it.", "form": "\"Have you stopped doing X?\" \u2014 answering yes or no both admit you did X."}, {"code": "I22", "name": "Fallacy of Composition", "type": "Informal", "def": "Assuming that what is true of the parts must be true of the whole.", "form": "Each part of W has trait T. Therefore, W has trait T."}, {"code": "I23", "name": "Fallacy of Division", "type": "Informal", "def": "Assuming that what is true of the whole must be true of each part \u2014 the mirror image of composition.", "form": "W has trait T. Therefore, each part of W has trait T."}, {"code": "I24", "name": "The Fallacy Fallacy (alias: argument from fallacy; argumentum ad logicam)", "type": "Guardrail", "def": "Concluding that a claim must be false because an argument offered for it was fallacious.", "form": "The argument for P is fallacious. Therefore, P is false. (Invalid: a bad argument proves nothing about P either way.)"}];
+const $=id=>document.getElementById(id);
+const LS="stoicv1";
+const STAGES={works:"In the works",force:"In force",retired:"Retired"};
+const PSTAGE=["Idea","Drafting","Ready","Published"];
+let S=JSON.parse(localStorage.getItem(LS)||"null");
+if(!S){ S={
+ ledger:[
+  {title:"Lonoke County §601.4 — “Campaign Finance Limitations”",status:"force",tag:"ADOPTED",detail:"Democratic Party of Lonoke County bylaws · Adopted Jan 23, 2026. The proof case. The bylaw works by designation, not by naming categories: the County Committee designates entities “grossly misaligned in their mission, message, or operations” with the party platform. The ban binds the committee itself, its auxiliaries, and its own candidates and nominees. The Secretary maintains the proscribed list (public; additions/removals proposed from the floor and voted at the following meeting by simple majority). Contributions are refunded within 30 days; the Rules Committee investigates violations. (Summary of the mechanism — not the adopted text.)"},
+  {title:"Cabot Ordinance No. 21 of 2026 — AI religious exemption",status:"force",tag:"ADOPTED",detail:"City of Cabot, Arkansas · Authored by Corey Spangler · Adopted Aug 17, 2026, unanimous roll call. No city employee may be compelled, as a condition of employment, to use generative or agentic AI in a way that conflicts with sincerely held religious beliefs. Written First Amendment Technological Accommodation request to HR; the city provides alternative traditional mechanisms; performance and quality standards do not change. Assistive tech (spellcheck, calculators, search) is explicitly not covered."},
+  {title:"Cabot Ordinance No. 33 of 2026 — third-party ALPR funding ban",status:"works",tag:"IN PROCESS",detail:"City of Cabot, Arkansas · Sponsored by Corey Spangler · Second reading passed Nov 2, 2026. Bars appropriating or spending city funds on third-party automated license-plate reader systems; the text names no vendor. On Nov 2, a motion to waive the third reading and pass immediately failed 4–4 (waiver requires two-thirds of all members). Third reading at the next regular meeting, expected Nov 16, 2026."},
+  {title:"State-level “Plebocracy” amendment — Democratic Party of Arkansas",status:"works",tag:"UNRESOLVED IN THE RECORD",detail:"DPA State Committee · 2025. Corey authored the “Plebocracy: Pro-Democracy, Anti-Oligarchy” amendment — the state-level version of the designation design that later became §601.4 in Lonoke County. An April 2025 adoption was reported (85–72), but the sequence is ambiguous in the record: versions were prepared for more than one meeting, and the reporting does not settle which text was adopted. This entry stays labeled unresolved until a document settles it. The county-level mechanism is the verified one."}
+ ],
+ committees:[{name:"Democratic Party of Lonoke County",seats:"",vacant:"",yours:"",rule:"members",note:"Proof case — §601.4 clean-money bylaw adopted Jan 23, 2026. Run the audit: fill in the real seat numbers."}],
+ scores:[], pipe:[]};
+}
+function save(){localStorage.setItem(LS,JSON.stringify(S));}
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function show(id){["scr-home","scr-play","scr-ledger","scr-seat","scr-tools","scr-pc"].forEach(x=>$(x).classList.toggle("hidden",x!==id));
+  document.querySelectorAll("nav.tabs button").forEach(b=>b.classList.toggle("on",b.dataset.scr===id)); window.scrollTo(0,0);}
+document.querySelectorAll("nav.tabs button").forEach(b=>b.onclick=()=>show(b.dataset.scr));
+/* ledger */
+function renderLedger(){
+  $("ledger-cols").innerHTML=Object.keys(STAGES).map(st=>{
+    const items=S.ledger.map((e,i)=>({e,i})).filter(x=>x.e.status===st);
+    return '<div><div class="colhd">'+STAGES[st].toUpperCase()+'</div>'+(items.length?items.map(x=>'<div class="entry"><b>'+esc(x.e.title)+'</b>'+(x.e.tag?'<span class="tag '+(x.e.tag==="ADOPTED"?"adopted":(x.e.tag.indexOf("UNRESOLVED")===0?"unres":""))+'">'+esc(x.e.tag)+'</span>':"")+'<p>'+esc(x.e.detail)+'</p><label class="f">Move to</label><select data-led="'+x.i+'">'+Object.keys(STAGES).map(k=>'<option value="'+k+'"'+(k===st?" selected":"")+'>'+STAGES[k]+'</option>').join("")+'</select> <button class="btn small red" data-leddel="'+x.i+'">Delete</button></div>').join(""):'<p class="small">Nothing here yet.</p>')+'</div>';
+  }).join("");
+  document.querySelectorAll("[data-led]").forEach(sel=>sel.onchange=()=>{S.ledger[+sel.dataset.led].status=sel.value; if(sel.value==="force"&&!S.ledger[+sel.dataset.led].tag) S.ledger[+sel.dataset.led].tag="ADOPTED"; save(); renderLedger();});
+  document.querySelectorAll("[data-leddel]").forEach(b=>b.onclick=()=>{ if(b.dataset.armed){S.ledger.splice(+b.dataset.leddel,1); save(); renderLedger();} else {b.dataset.armed="1"; b.textContent="Tap again to confirm";} });
+}
+$("btn-led").onclick=()=>{ const t=$("l-title").value.trim(); if(!t)return; S.ledger.push({title:t,status:$("l-status").value,tag:"",detail:$("l-detail").value.trim()}); $("l-title").value=""; $("l-detail").value=""; save(); renderLedger(); };
+/* quorum math */
+function quorum(seats,vacant,yours,rule){
+  seats=+seats||0; vacant=+vacant||0; yours=+yours||0;
+  const filled=Math.max(0,seats-vacant);
+  const base=rule==="members"?filled:seats;
+  const q=rule==="third"?Math.ceil(base/3):Math.floor(base/2)+1;
+  return {q:q,filled:filled,need:Math.max(0,q-yours),held:yours>=q&&q>0};
+}
+function verdict(v){
+  if(!v.q) return "Enter the committee's numbers to run the math.";
+  if(v.held) return "Quorum is "+v.q+". Your people can hold quorum on their own — quorum held.";
+  return "Quorum is "+v.q+". Your people hold "+(v.need===v.q?"none of it yet":(v.q-v.need)+" of it")+" — you need "+v.need+" more reliable seat"+(v.need===1?"":"s")+" to hold quorum.";
+}
+$("btn-calc").onclick=()=>{ const v=quorum($("c-seats").value,$("c-vacant").value,$("c-yours").value,$("c-rule").value);
+  $("calc-out").innerHTML='<div class="verdict">'+esc(verdict(v))+'</div><p class="small">Filled seats: '+v.filled+'. No movement required — just arithmetic.</p>'; };
+function renderComms(){
+  $("comm-list").innerHTML=S.committees.map((c,i)=>{ const has=c.seats!==""&&c.seats!=null; const v=has?quorum(c.seats,c.vacant,c.yours,c.rule):null;
+    return '<div class="entry"><b>'+esc(c.name)+'</b><p>'+(has?("Seats "+c.seats+" · vacant "+(c.vacant||0)+" · filled "+v.filled+" · your people "+(c.yours||0)+"<br>"+esc(verdict(v))):"Audit pending — seat numbers not entered yet.")+'</p>'+(c.note?'<p class="small">'+esc(c.note)+'</p>':"")+'<button class="btn small red" data-commdel="'+i+'">Remove</button></div>'; }).join("");
+  document.querySelectorAll("[data-commdel]").forEach(b=>b.onclick=()=>{ if(b.dataset.armed){S.committees.splice(+b.dataset.commdel,1); save(); renderComms();} else {b.dataset.armed="1"; b.textContent="Tap again to confirm";} });
+}
+$("btn-comm").onclick=()=>{ const n=$("k-name").value.trim(); if(!n)return; S.committees.push({name:n,seats:$("k-seats").value,vacant:$("k-vacant").value,yours:$("k-yours").value,rule:$("k-rule").value,note:$("k-note").value.trim()}); $("k-name").value=""; $("k-note").value=""; save(); renderComms(); };
+/* scorecard */
+function renderScores(){
+  $("score-list").innerHTML=S.scores.length?S.scores.map((p,i)=>{ const lean=p.score>=67?"STEWARDSHIP":(p.score<=33?"SOPHISTRY":"MIXED"); return '<div class="entry"><b>'+esc(p.name)+'</b> <span class="tag">'+p.score+' / 100 · '+lean+'</span><p>'+esc(p.note||"")+'</p><button class="btn small red" data-scdel="'+i+'">Delete</button></div>'; }).join(""):'<p class="small">Nobody graded yet.</p>';
+  document.querySelectorAll("[data-scdel]").forEach(b=>b.onclick=()=>{ if(b.dataset.armed){S.scores.splice(+b.dataset.scdel,1); save(); renderScores();} else {b.dataset.armed="1"; b.textContent="Tap again to confirm";} });
+}
+$("p-score").oninput=e=>$("p-val").textContent=e.target.value;
+$("btn-score").onclick=()=>{ const n=$("p-name").value.trim(); if(!n)return; S.scores.push({name:n,score:+$("p-score").value,note:$("p-note").value.trim()}); $("p-name").value=""; $("p-note").value=""; save(); renderScores(); };
+/* pipeline */
+function renderPipe(){
+  $("pipe-list").innerHTML=S.pipe.length?S.pipe.map((p,i)=>'<div class="entry"><b>'+esc(p.title)+'</b> <span class="tag">'+esc(p.kind)+'</span><p>Stage: <b>'+esc(p.stage)+'</b></p>'+(p.stage!=="Published"?'<button class="btn small primary" data-adv="'+i+'">Advance → '+PSTAGE[PSTAGE.indexOf(p.stage)+1]+'</button>':"")+' <button class="btn small red" data-pipedel="'+i+'">Delete</button></div>').join(""):'<p class="small">Pipeline is empty — add the first idea below.</p>';
+  document.querySelectorAll("[data-adv]").forEach(b=>b.onclick=()=>{ const p=S.pipe[+b.dataset.adv]; p.stage=PSTAGE[PSTAGE.indexOf(p.stage)+1]; save(); renderPipe(); });
+  document.querySelectorAll("[data-pipedel]").forEach(b=>b.onclick=()=>{ if(b.dataset.armed){S.pipe.splice(+b.dataset.pipedel,1); save(); renderPipe();} else {b.dataset.armed="1"; b.textContent="Tap again to confirm";} });
+}
+$("btn-pipe").onclick=()=>{ const t=$("i-title").value.trim(); if(!t)return; S.pipe.push({title:t,kind:$("i-kind").value,stage:"Idea"}); $("i-title").value=""; save(); renderPipe(); };
+/* fallacies */
+function renderFal(f){
+  const q=(f||"").toLowerCase();
+  $("fal-list").innerHTML=FAL.filter(x=>!q||(x.name+" "+x.def).toLowerCase().includes(q)).map(x=>'<div class="fal"><b>'+x.code+". "+esc(x.name)+'</b> <span class="tag">'+x.type.toUpperCase()+'</span><p>'+esc(x.def)+(x.form?' <i>Form: '+esc(x.form)+'</i>':"")+'</p></div>').join("")||'<p class="small">No match.</p>';
+}
+$("fal-q").addEventListener("input",e=>renderFal(e.target.value));
+renderLedger(); renderComms(); renderScores(); renderPipe(); renderFal("");
+</script>
+</body>
+</html>
