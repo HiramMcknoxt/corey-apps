@@ -1,0 +1,76 @@
+name: Build Part 107 Study (unsigned IPA)
+
+# Builds the Part 107 Study app UNSIGNED on a macOS runner and uploads the
+# .ipa as a workflow artifact. SideStore/AltStore re-sign it with Corey's
+# free Apple ID at install time — unsigned is exactly what we want.
+# For the permanent download links, use the "Release all apps" workflow.
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "part107/**"
+      - ".github/workflows/build-part107.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: part107
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: part107/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci || npm install --no-audit --no-fund
+
+      - name: Generate app icon and splash PNGs from SVG source
+        run: |
+          npm install --no-save --no-audit --no-fund sharp
+          node scripts/generate-assets.js
+
+      - name: Generate iOS project if needed, then sync web build
+        run: |
+          if [ ! -d ios ]; then npx cap add ios; fi
+          npx cap sync ios
+
+      - name: Install app icon
+        run: cp icon.png ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png
+
+      - name: Install CocoaPods dependencies
+        working-directory: part107/ios/App
+        run: pod install
+
+      - name: Build unsigned
+        run: |
+          xcodebuild -workspace ios/App/App.xcworkspace -scheme App \
+            -configuration Release -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build/derived \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          APP_PATH=$(find build/derived/Build/Products/Release-iphoneos -maxdepth 1 -name "*.app" | head -1)
+          echo "Packaging $APP_PATH"
+          rm -rf Payload Part107-Study.ipa
+          mkdir Payload
+          cp -R "$APP_PATH" Payload/
+          zip -qry Part107-Study.ipa Payload
+
+      - name: Upload unsigned IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: part107-unsigned-ipa
+          path: part107/Part107-Study.ipa
+          if-no-files-found: error
