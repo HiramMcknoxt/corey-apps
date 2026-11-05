@@ -1,0 +1,136 @@
+name: Release all apps (unsigned IPAs on a GitHub Release)
+
+# THE deliverable pipeline. Builds all three apps UNSIGNED on macOS runners
+# and attaches the three .ipa files to a GitHub Release with plain names:
+#   Part107-Study.ipa · Cabot-Lore.ipa · Stoic-Opposition.ipa
+# Release downloads are permanent direct links that work from an iPhone
+# browser (unlike workflow artifacts, which need a login and expire).
+# Trigger: push a version tag (e.g. v1.0.0), or run manually and choose the
+# release tag. SideStore/AltStore re-sign the unsigned IPAs at install time.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag to create (e.g. v1.0.0)"
+        required: true
+        default: "v1.0.0"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dir: part107
+            ipa: Part107-Study.ipa
+            artifact: part107-ipa
+          - dir: cabot-lore
+            ipa: Cabot-Lore.ipa
+            artifact: cabot-lore-ipa
+          - dir: stoic-opposition
+            ipa: Stoic-Opposition.ipa
+            artifact: stoic-opposition-ipa
+    defaults:
+      run:
+        working-directory: ${{ matrix.dir }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ${{ matrix.dir }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci || npm install --no-audit --no-fund
+
+      - name: Generate app icon and splash PNGs from SVG source
+        run: |
+          npm install --no-save --no-audit --no-fund sharp
+          node scripts/generate-assets.js
+
+      - name: Generate iOS project if needed, then sync web build
+        run: |
+          if [ ! -d ios ]; then npx cap add ios; fi
+          npx cap sync ios
+
+      - name: Install app icon
+        run: cp icon.png ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png
+
+      - name: Install CocoaPods dependencies
+        working-directory: ${{ matrix.dir }}/ios/App
+        run: pod install
+
+      - name: Build unsigned
+        run: |
+          xcodebuild -workspace ios/App/App.xcworkspace -scheme App \
+            -configuration Release -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build/derived \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            build
+
+      - name: Package unsigned IPA
+        run: |
+          APP_PATH=$(find build/derived/Build/Products/Release-iphoneos -maxdepth 1 -name "*.app" | head -1)
+          echo "Packaging $APP_PATH"
+          rm -rf Payload "${{ matrix.ipa }}"
+          mkdir Payload
+          cp -R "$APP_PATH" Payload/
+          zip -qry "${{ matrix.ipa }}" Payload
+
+      - name: Upload IPA for the release job
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.dir }}/${{ matrix.ipa }}
+          if-no-files-found: error
+
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download all three IPAs
+        uses: actions/download-artifact@v4
+        with:
+          path: ipas
+
+      - name: Attach IPAs to the GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.release_tag || github.ref_name }}
+          name: Corey Apps ${{ github.event.inputs.release_tag || github.ref_name }}
+          body: |
+            Unsigned builds of Corey's three apps. They are **not** App Store
+            builds and iOS will not install them directly — install them with
+            **SideStore** (or AltStore), which signs them with your own free
+            Apple ID on the phone:
+
+            1. Download the `.ipa` files below to your iPhone (Files app) or PC.
+            2. In SideStore: **My Apps → +** → pick the `.ipa` → it signs and installs.
+            3. Keep SideStore's Wi-Fi auto-refresh on so the 7-day free-signing
+               expiry never bites.
+
+            ⚠️ **Free Apple ID limit:** only 3 sideloaded apps can be active at
+            once, and SideStore itself uses one slot — so only **2** of these 3
+            apps fit next to SideStore at a time (see SIDELOAD-GUIDE.md in the
+            repo for the LiveContainer workaround, or a paid developer account,
+            which removes the limit).
+
+            - **Part107-Study.ipa** — FAA Part 107 quiz drills, miss bank, timed practice exams, 14-day sprint.
+            - **Cabot-Lore.ipa** — The Cabot Lore Repository: 18 topic stories, timeline, mayors, photo gallery, Ask queue, My Shelf.
+            - **Stoic-Opposition.ipa** — Living Ledger, Take a Seat quorum tools, Anti-Politician Scorecard, content pipeline, Premise Check fallacy catalog.
+          files: |
+            ipas/part107-ipa/Part107-Study.ipa
+            ipas/cabot-lore-ipa/Cabot-Lore.ipa
+            ipas/stoic-opposition-ipa/Stoic-Opposition.ipa
+          fail_on_unmatched_files: true
