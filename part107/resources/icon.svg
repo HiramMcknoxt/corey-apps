@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#0b2a5b"/>
+  <!-- paper plane -->
+  <polygon points="150,540 874,196 600,868 478,634" fill="#ffffff"/>
+  <line x1="478" y1="634" x2="874" y2="196" stroke="#0b2a5b" stroke-width="14"/>
+  <!-- check badge -->
+  <circle cx="738" cy="748" r="148" fill="#1f9d63"/>
+  <polyline points="662,750 722,812 822,678" fill="none" stroke="#ffffff" stroke-width="52" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
